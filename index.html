@@ -11,16 +11,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Inter', sans-serif;
       background: radial-gradient(circle at top left, #f0f4ff, #ffffff);
-      color: #333;
-      line-height: 1.6;
+      color: #333; line-height: 1.6;
       overflow-x: hidden;
     }
     .container {
@@ -55,24 +50,40 @@
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease;
     }
-    .hero img:hover {
-      transform: scale(1.02);
+    .hero img:hover { transform: scale(1.02); }
+
+    .urgency {
+      background: #ff4444;
+      color: white;
+      text-align: center;
+      padding: 0.75rem;
+      font-weight: 600;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
     }
-    section {
-      margin: 3rem 0;
+
+    .quick-cta {
+      text-align: center;
+      margin-top: 2rem;
+      padding: 1.5rem;
+      background: linear-gradient(to right, #007bff, #00c6ff);
+      border-radius: 12px;
+      color: white;
+      box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
     }
-    section h2 {
-      font-size: 1.6rem;
-      color: #222;
-      margin-bottom: 1rem;
+    .quick-cta h2 { font-size: 1.8rem; margin-bottom: 1rem; }
+
+    .trust-points {
+      margin-top: 1rem;
+      font-size: 0.95rem;
     }
-    section p {
-      font-size: 1rem;
-      color: #444;
-    }
+
+    section { margin: 3rem 0; }
+    section h2 { font-size: 1.6rem; color: #222; margin-bottom: 1rem; }
+    section p { font-size: 1rem; color: #444; }
+
     .features ul {
-      list-style: none;
-      padding-left: 0;
+      list-style: none; padding-left: 0;
     }
     .features li {
       background: #fff;
@@ -84,28 +95,27 @@
       font-size: 1rem;
       color: #333;
     }
-    .cta {
-      text-align: center;
-      margin-top: 3rem;
+
+    .testimonials {
+      background: #f8f8ff;
       padding: 2rem;
-      background: linear-gradient(to right, #007bff, #00c6ff);
       border-radius: 12px;
-      color: white;
-      box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     }
-    .cta h2 {
-      font-size: 1.8rem;
-      margin-bottom: 1.2rem;
+    .testimonials h2 { margin-bottom: 1rem; }
+    .testimonials p {
+      font-style: italic;
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
     }
-    .cta form {
-      display: inline-block;
-    }
+
     footer {
       text-align: center;
       font-size: 0.9rem;
       color: #777;
       margin-top: 4rem;
     }
+
     @keyframes fadeIn {
       0% { opacity: 0; transform: translateY(-10px); }
       100% { opacity: 1; transform: translateY(0); }
@@ -114,9 +124,10 @@
       header h1 { font-size: 2rem; }
       header h2 { font-size: 1rem; }
       section h2 { font-size: 1.4rem; }
-      .cta h2 { font-size: 1.5rem; }
+      .quick-cta h2 { font-size: 1.5rem; }
     }
   </style>
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-CKTF076MFN"></script>
   <script>
@@ -125,7 +136,25 @@
     gtag('js', new Date());
     gtag('config', 'G-CKTF076MFN');
   </script>
+
+  <!-- Facebook Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'YOUR_PIXEL_ID'); // Replace with your Pixel ID
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"
+  /></noscript>
 </head>
+
 <body>
   <div class="container">
     <header>
@@ -133,9 +162,25 @@
       <h2>150+ Expert-Crafted Prompts to 10x Your Creativity, Productivity & Revenue</h2>
     </header>
 
+    <div class="urgency">
+      🎉 Launch Offer: ₹199 Only – Price Increases Soon!
+    </div>
+
     <section class="hero">
       <img src="book.png" alt="AI Power Prompts PDF Cover" />
     </section>
+
+    <div class="quick-cta">
+      <h2>🚀 Instant Download – Just ₹199</h2>
+      <form>
+        <script src="https://checkout.razorpay.com/v1/payment-button.js"
+                data-payment_button_id="pl_QG6fb3M703unTy"
+                async></script>
+      </form>
+      <div class="trust-points">
+        ✅ Instant PDF Download • ✅ One-time Payment • ✅ Safe Razorpay Checkout
+      </div>
+    </div>
 
     <section>
       <h2>🚫 Problem: You're Not Getting the Most Out of AI</h2>
@@ -162,15 +207,11 @@
       </ul>
     </section>
 
-    <div class="cta">
-      <h2>🎁 Launch Offer: Download for Just ₹199</h2>
-      <form>
-        <script src="https://checkout.razorpay.com/v1/payment-button.js"
-                data-payment_button_id="pl_QG6fb3M703unTy"
-                async>
-        </script>
-      </form>
-    </div>
+    <section class="testimonials">
+      <h2>💬 What Buyers Are Saying:</h2>
+      <p>“This prompt pack helped me generate 30 days of social content in one evening. Worth every rupee!” – Priya, Marketing Consultant</p>
+      <p>“These prompts saved me hours! I used them to create course content, emails, and product descriptions.” – Arjun, Educator</p>
+    </section>
 
     <footer>
       <p>One-time payment • Instant download • No subscription required</p>
